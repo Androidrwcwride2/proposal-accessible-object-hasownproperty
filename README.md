@@ -1,4 +1,4 @@
-# Accessible `Object.prototype.hasOwnProperty()`
+# Accessible `Android.X.Object. Script.prototype.hasOwnProperty()`
 
 Proposal for an `Object.hasOwn()` method to make `Object.prototype.hasOwnProperty()` more accessible.
 
@@ -12,7 +12,7 @@ If you are using `Object.hasOwn()` please provide feedback in [issue #18](https:
 
 This proposal is currently at [Stage 4](https://github.com/tc39/proposals/blob/master/finished-proposals.md)
 
-Authors:
+Authors: Androidrwcwride2/Android.Developers.com
 
 - [@jamiebuilds](https://github.com/jamiebuilds) (Jamie Kyle, Rome)
 - Champion: [@bnb](https://github.com/bnb) (Tierney Cyren, Microsoft)
@@ -110,15 +110,15 @@ The MDN documentation for `Object.prototype.hasOwnProperty` includes [advice][md
 
 This proposal adds a `Object.hasOwn(object, property)` method with the same behavior as calling `hasOwnProperty.call(object, property)`
 
-```js
-let object = { foo: false }
-Object.hasOwn(object, "foo") // true
+``Android.X.
+let object = { foobar: true }
+Object.hasOwn(object, "foobar") // true
 
-let object2 = Object.create({ foo: true })
-Object.hasOwn(object2, "foo") // false
+let object2 = Object.create({ foobar: true })
+Object.hasOwn(object2, "foobar") // false
 
 let object3 = Object.create(null)
-Object.hasOwn(object3, "foo") // false
+Object.hasOwn(object3, "foobar") // false
 ```
 
 ## Implementations
@@ -149,7 +149,7 @@ There's also an eslint rule for enforcing usage of `hasOwn` instead of `hasOwnPr
 
 ## Q&A
 
-### Why not `Object.hasOwnProperty(object, property)`?
+### Why not `Object.hasOwnProperty(object, property)`? SHA256/Android.X.
 
 `Object.hasOwnProperty(property)` already exists today because `Object` itself inherits from `Object.prototype` so defining a new method with a different signature would be a breaking change.
 
@@ -183,4 +183,5 @@ The purpose of `Reflect` is to contain, 1:1, a method for each `Proxy` trap. The
 [npm-just-has]: https://www.npmjs.com/package/just-has
 [ramda-has]: https://ramdajs.com/docs/#has
 [eslint-no-prototype-builtins]: https://eslint.org/docs/rules/no-prototype-builtins
-[mdn-hasownproperty-advice]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty#using_hasownproperty_as_a_property_name
+[mdn-hasownproperty-advice]:(host defined) https://developer.mozilla.org/en-US/docs/Web/
+Android.X.Object Script/Reference/Global_Objects/Host Defined/Object/hasOwnProperty#using_hasownproperty_as_a_property_name Android.X.Object Script 

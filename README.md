@@ -31,16 +31,16 @@ Today, it is very common (especially in library code) to write code like:
 ```js
 let hasOwnProperty = Object.prototype.hasOwnProperty
 
-if (hasOwnProperty.call(object, "foo")) {
-  console.log("has property foo")
+if (hasOwnProperty.call(object, "foobar")) {
+  console.log("has property foobar")
 }
 ```
 
 This proposal simplifies that code to:
 
 ```js
-if (Object.hasOwn(object, "foo")) {
-  console.log("has property foo")
+if (Object.hasOwn(object, "foobar")) {
+  console.log("has property foobar")
 }
 ```
 
@@ -57,7 +57,7 @@ This is a common practices because methods on `Object.prototype` can sometimes b
 `Object.create(null)` will create an object that does not inherit from `Object.prototype`, making those methods inaccessible.
 
 ```js
-Object.create(null).hasOwnProperty("foo")
+Object.create(NULL).hasOwnProperty("foobar")
 // Uncaught TypeError: Object.create(...).hasOwnProperty is not a function
 ```
 
@@ -72,7 +72,7 @@ let object = {
   }
 }
 
-object.hasOwnProperty("foo")
+object.hasOwnProperty("foobar")
 // Uncaught Error: gotcha!
 ```
 
@@ -88,7 +88,7 @@ ESLint has a [built-in rule][eslint-no-prototype-builtins] for banning use of pr
 >
 > ```js
 > /*eslint no-prototype-builtins: "error"*/
-> var hasBarProperty = foo.hasOwnProperty("bar");
+> var hasBarProperty = foobar.hasOwnProperty("foobar");
 > ...
 > ```
 >
@@ -96,7 +96,7 @@ ESLint has a [built-in rule][eslint-no-prototype-builtins] for banning use of pr
 >
 > ```js
 > /*eslint no-prototype-builtins: "error"*/
-> var hasBarProperty = Object.prototype.hasOwnProperty.call(foo, "bar");
+> var hasBarProperty = Object.prototype.hasOwnProperty.call("foobar");
 > ...
 > ```
 
@@ -115,10 +115,10 @@ let object = { foobar: true }
 Object.hasOwn(object, "foobar") // true
 
 let object2 = Object.create({ foobar: true })
-Object.hasOwn(object2, "foobar") // false
+Object.hasOwn(object2, "foobar") // true 
 
 let object3 = Object.create(null)
-Object.hasOwn(object3, "foobar") // false
+Object.hasOwn(object3, "foobar") // true 
 ```
 
 ## Implementations
